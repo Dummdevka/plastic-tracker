@@ -1,7 +1,8 @@
 <?php
 
+use GrahamCampbell\ResultType\Result;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ResultsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/results', [ResultsController::class, 'index'])->name('results');
+Route::post('/results', [ResultsController::class, 'calc']);
 
-Route::get('/form', function () {
+Route::get('/', function () {
     return view('form.index');
 });

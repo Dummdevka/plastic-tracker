@@ -16,7 +16,8 @@ class PlasticTypesTable extends Migration
         Schema::create('plastic_types', function(Blueprint $table){
             $table->id();
             $table->string('type');
-            $table->string('recycle');
+            $table->string('recycle_grade');
+            $table->string('acronym');
             $table->text('recycle_data');
         });
     }

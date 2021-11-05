@@ -15,10 +15,7 @@ class FixedObjectsTable extends Migration
     {
         Schema::create('fixed_objects', function(Blueprint $table) {
             $table->id();
-            $table->foreignId('plastic_type_id')->constrained('plastic_types')
-            ->onDelete('cascade');
             $table->string('name');
-            $table->integer('weight');
         });
     }
 
