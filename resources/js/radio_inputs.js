@@ -5,7 +5,7 @@ $('#bottle').on('click', function(){
 });
 $('#stroke').on('click', function(){
     $('#plasticType').val('PP');
-    $('#plasticWeight').val('2/10');
+    $('#plasticWeight').val('0.4');
 });
 $('#lid').on('click', function(){
     $('#plasticType').val('PET');

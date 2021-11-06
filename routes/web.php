@@ -13,9 +13,13 @@ use App\Http\Controllers\ResultsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/results', [ResultsController::class, 'index'])->name('results');
-Route::post('/results', [ResultsController::class, 'calc']);
 
+
+//Main page
 Route::get('/', function () {
     return view('form.index');
-});
+})->name('main');
+
+//Results page
+Route::get('/results', [ResultsController::class, 'index'])->name('results');
+Route::post('/results', [ResultsController::class, 'calc']);

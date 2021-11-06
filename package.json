@@ -15,10 +15,15 @@
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.3.11",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.43.4",
+        "sass-loader": "^12.3.0",
         "tailwindcss": "^2.2.19"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.4",
         "cash-dom": "^8.1.0",
+        "font-awesome": "^4.7.0",
         "tailwind": "^4.0.0"
     }
 }
