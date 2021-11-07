@@ -3,6 +3,8 @@
 use GrahamCampbell\ResultType\Result;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ResultsController;
+use App\Http\Controllers\Auth\RegistrationController;
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,10 +17,16 @@ use App\Http\Controllers\ResultsController;
 */
 
 
-//Main page
-Route::get('/', function () {
+//Registration page
+Route::get('/register', [RegistrationController::class, 'index'])->name('register');
+Route::post('/register', [RegistrationController::class, 'store_user'])->name('register');
+
+//Login
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+//Home
+Route::get('/home', function () {
     return view('form.index');
-})->name('main');
+})->name('home');
 
 //Results page
 Route::get('/results', [ResultsController::class, 'index'])->name('results');

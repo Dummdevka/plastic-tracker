@@ -38,7 +38,7 @@
     <!-- Back to the main page -->
     <button type="button" class="border border-gray-500 bg-purple-300 mt-4 text-black w-3/12 rounded-sm p-0.5 cursor-pointer 
                                             hover:bg-purple-400 border-purple-700
-                                            transition delay-170 duration-200 ease-in-out"> <a href="{{ route('main') }}">Back to the main page</a> </button>
+                                            transition delay-170 duration-200 ease-in-out"> <a href="{{ route('home') }}">Back to the main page</a> </button>
     </div>
 
     </div>
