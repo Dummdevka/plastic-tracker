@@ -1,7 +1,6 @@
 @extends ('layouts.app')
 
 @section('content')
-
     <!-- Recycle info block -->
     <div class="w-full flex items-center flex-col">        
     
@@ -24,10 +23,25 @@
                 <h2 class="block text-2xl font-bold mb-3"> {{ $plastic_type }} ({{ $acronym }})</h2>
                 <p class="block text-gray-700 text-center">{{ $rec_data }}</p>
         </div>
-
+    <!-- Calculations -->
+    <p>Your plastic would be approximately {{ round($tshirt_part/160,2) }}% of a T-shirt!</p>
+        <div class="flex justify-center w-full mt-5 mb-5">
+        <!-- <span class="w-1 flex items-center fa-stack text-gray-300 text-9xl ">
+            <i class="block fa-stack-1x fas fa-couch "></i>
+            <i class=" block fa-stack-1x fas fa-couch text-blue-300 overflow-hidden w-20"></i>
+        </span> -->
+        <span class="w-1 mr-40 flex items-center fa-stack text-gray-300 text-9xl ">
+            <i class="fa-stack-1x fas fa-tshirt "></i>
+            <i style="width: {{ $tshirt_part }}px;" class="fa-stack-1x float-left fas fa-tshirt text-blue-300 overflow-hidden"></i>
+        </span>
+        </div>
     <!-- Back to the main page -->
     <button type="button" class="border border-gray-500 bg-purple-300 mt-4 text-black w-3/12 rounded-sm p-0.5 cursor-pointer 
                                             hover:bg-purple-400 border-purple-700
                                             transition delay-170 duration-200 ease-in-out"> <a href="{{ route('main') }}">Back to the main page</a> </button>
     </div>
+
+    </div>
 @endsection
+
+
