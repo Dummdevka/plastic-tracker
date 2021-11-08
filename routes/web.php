@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ResultsController;
 use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,8 +24,14 @@ Route::post('/register', [RegistrationController::class, 'store_user'])->name('r
 
 //Login
 Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'log_user'])->name('login');
+
+//Logout
+Route::get('/logout', [LogoutController::class, 'index'])->name('logout');
+Route::post('/logout', [LogoutController::class, 'logout_user'])->name('logout');
+
 //Home
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('form.index');
 })->name('home');
 

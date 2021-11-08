@@ -1,7 +1,8 @@
 @extends ('layouts.app')
 
 @section('content')
-    <h3 class="text-bold ml-7 text-2xl text-green-500">Hey, {{ auth()->user()->username }}</h3>
+    
+
     <form action="{{ route('results') }}" method="post" class="grid place-items-center mt-5 border-t border-gray-500 pt-4">
     @csrf 
 
