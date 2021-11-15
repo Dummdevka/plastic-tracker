@@ -6,6 +6,8 @@ use App\Http\Controllers\ResultsController;
 use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Account\RecycledController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,3 +40,7 @@ Route::get('/', function () {
 //Results page
 Route::get('/results', [ResultsController::class, 'index'])->name('results');
 Route::post('/results', [ResultsController::class, 'calc']);
+
+//My plastic page
+Route::get('/recycled', [RecycledController::class, 'index'])->name('recycled');
+Route::post('/recycled', [RecycledController::class, 'add_recycled']);

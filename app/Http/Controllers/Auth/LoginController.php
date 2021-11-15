@@ -8,12 +8,18 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    //Middleware
+    public function __construct()
+    {
+        $this->middleware(['guest']);
+    }
+
     public function index(){
         return view('auth.login');
     }
 
     public function log_user(Request $request){
-        
+
         //Validate
         $this->validate($request, [
             'email' => 'required|email',
@@ -21,7 +27,9 @@ class LoginController extends Controller
         ]);
 
         //Sign in
-        Auth::attempt($request->only('email', 'password'));
+        if(!Auth::attempt($request->only('email', 'password'), $request->remember)){
+            return back()->with('status', 'Invalid login details');
+        }
 
         //Redirect
         return redirect()->route('home');

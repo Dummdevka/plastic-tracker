@@ -31,18 +31,22 @@
                 <i class="block fa-stack-1x fas fa-couch "></i>
                 <i class=" block fa-stack-1x fas fa-couch text-blue-300 overflow-hidden w-20"></i>
             </span> -->
-            <span class="w-1 mr-40 flex items-center fa-stack text-gray-300 text-9xl ">
+            <span class="w-1 mr-40 flex items-center fa-stack text-gray-300 text-9xl -mt-10 -mb-5">
                 <i class="fa-stack-1x fas fa-tshirt "></i>
-                <i style="width: {{ $tshirt_part }}px;" class="fa-stack-1x float-left fas fa-tshirt text-blue-300 overflow-hidden"></i>
+                <i style="width: {{ $tshirt_part }}px;" class="fa-stack-1x text-left fas fa-tshirt text-blue-300 overflow-hidden "></i>
             </span>
             </div>
     @endif
-    
+
     @auth
     <!-- Add to my plastic button -->
-    <button type="button" class="border border-gray-500 bg-blue-300 mt-4 text-black w-3/12 rounded-sm p-0.5 cursor-pointer 
+
+    <form action="{{ route('recycled', ['acronym'=>$acronym, 'weight'=>$tshirt_part/20]) }}" method="post" class="ml-8 inline-block">
+    @csrf
+    <button type="submit" class="border border-gray-500 bg-blue-300 mt-4 text-black w-3/12 rounded-sm p-0.5 cursor-pointer 
                                             hover:bg-blue-400 border-blue-700
-                                            transition delay-170 duration-200 ease-in-out"> <a href="{{ route('home') }}">Add</a> </button>
+                                            transition delay-170 duration-200 ease-in-out"> Add </button>
+    </form>
     @endauth
     <!-- Back to the main page -->
     <button type="button" class="border border-gray-500 bg-purple-300 mt-4 text-black w-3/12 rounded-sm p-0.5 cursor-pointer 

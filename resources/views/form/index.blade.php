@@ -47,6 +47,12 @@
     </select>
     <label for="plasticWeight">Weight (g):</label>
     <input type="number" step=".1" name="plastic_weight" id="plasticWeight" value="0" min="0" class="border border-green-500 p-1 rounded-sm h-7">
+
+    @error('plastic_weight')
+      <div class="text-red-500 text-sm">
+        {{ $message }}
+      </div>
+    @enderror
     <!-- Button -->
     <button type="submit" class="border border-gray-500 bg-purple-300 mt-4 text-black w-3/12 rounded-sm p-0.5 cursor-pointer 
                                             hover:bg-purple-400 border-purple-700

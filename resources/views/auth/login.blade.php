@@ -3,6 +3,7 @@
 @section ('content')
 <div class="flex items-center flex-col">
     <h2 class="text-gray-700 text-2xl mt-4">Log in</h2>
+   
     <form action="{{ route('login') }}" method="post" class="w-4/12 mt-5 flex flex-col justify-center items-center pt-4 rouded-md bg-purple-200 border border-gray-400 rounded-md">
         @csrf 
         <div class="w-9/12">
@@ -27,8 +28,8 @@
         @enderror
         </div>
         <div>
-        <input type="checkbox" name="remember_me" id="remember_me">
-        <label class="text-xs text-gray-600" for="remember_me">Remember me</label>
+        <input type="checkbox" name="remember" id="remember_me">
+        <label class="text-xs text-gray-600" for="remember">Remember me</label>
         </div>
         <button type="submit" class="border border-gray-500 bg-purple-300 mt-2 mb-3 text-black w-3/12 rounded-sm p-0.5 cursor-pointer 
                                             hover:bg-blue-400 border-purple-700

@@ -13,11 +13,11 @@ class ResultsController extends Controller
     }
 
     public function calc( Request $request){
-
+        
         //Validating inputs
         $this->validate($request, [
             'plastic_type' => 'required',
-            'plastic_weight' => 'required|integer|min:0.1'
+            'plastic_weight' => 'required|min:0.1'
         ]);
 
         //Getting values from database

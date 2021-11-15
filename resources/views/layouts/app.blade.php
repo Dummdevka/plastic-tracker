@@ -18,9 +18,16 @@
 @auth
     <h3 class="inline-block text-bold ml-7 text-2xl text-green-500">Hey, {{ auth()->user()->username }}</h3>
 
+    <!-- Log out -->
     <form action="{{ route('logout') }}" method="post" class="ml-8 inline-block">
         @csrf 
         <button type="submit" class="text-gray-700 border border-gray-700 rounded-sm p-1"> Logout </button>
+    </form>
+
+    <!-- My plastic -->
+    <form action="{{ route('recycled') }}" method="get" class="ml-8 inline-block">
+        @csrf
+        <button type="submit" class="text-gray-700 border border-gray-700 rounded-sm p-1"> My plastic </button>
     </form>
 @endauth
 

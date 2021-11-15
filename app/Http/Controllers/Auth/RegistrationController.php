@@ -10,11 +10,16 @@ use Illuminate\Support\Facades\Auth;
 
 class RegistrationController extends Controller
 {
+    //Middleware
+    public function __construct()
+    {
+        $this->middleware(['guest']);
+    }
     public function index(){
         return view('auth.registration');
     }
     public function store_user(Request $request){
-
+        
         //Validate inputs
         $this->validate($request, [
             'username' => 'required|min:6|max:255|unique:users',
