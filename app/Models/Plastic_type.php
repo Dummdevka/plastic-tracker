@@ -9,6 +9,8 @@ use App\Models\Plastic_item;
 class Plastic_type extends Model
 {
     use HasFactory;
+    
+    public $timestamps = false;
 
     //Params
     protected $fillable = [
