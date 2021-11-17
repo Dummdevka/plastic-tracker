@@ -44,3 +44,6 @@ Route::post('/results', [ResultsController::class, 'calc']);
 //My plastic page
 Route::get('/recycled', [RecycledController::class, 'index'])->name('recycled');
 Route::post('/recycled', [RecycledController::class, 'add_recycled']);
+
+//Deleting recycled items
+Route::get('/delete', [RecycledController::class, 'delete'])->name('delete');

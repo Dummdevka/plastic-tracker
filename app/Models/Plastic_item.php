@@ -12,8 +12,8 @@ class Plastic_item extends Model
     use HasFactory;
 
     protected $fillable = [
-        'plastic_type',
-        'mass',
+        'plastic_type_id',
+        'weight',
     ];
 
     //Defining dependency [Plastic type]

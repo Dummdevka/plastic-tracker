@@ -23,6 +23,8 @@ class ResultsController extends Controller
         //Getting values from database
         $plastic_type = DB::table('plastic_types')->where('acronym', $request->plastic_type)->first();
         $tshirt_part = $request->plastic_weight*20;
+
+        //dd($plastic_type->recycle_grade);
         //Passing data to the view
         return view('results.index', [
             'rec_grade'=>$plastic_type->recycle_grade,

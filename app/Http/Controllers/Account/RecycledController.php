@@ -33,20 +33,26 @@ class RecycledController extends Controller
     {
         //Parse plastic data
         $weight = $request->weight;
-
         //Get plastic id from its acronym
-        $id = Plastic_type::where('acronym', $request->acronym)->get()->modelKeys();
+        $id = Plastic_type::where('acronym', $request->acronym)->first()->id;
         //Insert data
-
-        auth()->user()->plastic_items()->create([
-            'plastic_type' => $id,
-            'mass' => $weight
+        $request->user()->plastic_items()->create([
+            'plastic_type_id' => $id,
+            'weight' => $weight
         ]);
-        // Plastic_item::create([
-        //     'plastic_type_id' => $id,
-        //     'weight' => $weight
-        // ]);
+
+        //Redirecting
+        return redirect()->route('recycled');
+    }
+
+    //Deleting
+    public function delete(Request $request){
+
         
+        Plastic_item::where('id', $request->item_id)->delete();
+
+        //Redirecting
+        return redirect()->route('recycled'); 
     }
 }
 

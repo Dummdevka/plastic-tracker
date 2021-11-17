@@ -41,11 +41,11 @@
     @auth
     <!-- Add to my plastic button -->
 
-    <form action="{{ route('recycled', ['acronym'=>$acronym, 'weight'=>$tshirt_part/20]) }}" method="post" class="ml-8 inline-block">
+    <form action="{{ route('recycled', ['acronym'=>$acronym, 'weight'=>$tshirt_part/20]) }}" method="post">
     @csrf
-    <button type="submit" class="border border-gray-500 bg-blue-300 mt-4 text-black w-3/12 rounded-sm p-0.5 cursor-pointer 
+    <button type="submit" class="border border-gray-500 bg-blue-300 mt-4 text-black rounded-sm p-0.5 cursor-pointer 
                                             hover:bg-blue-400 border-blue-700
-                                            transition delay-170 duration-200 ease-in-out"> Add </button>
+                                            transition delay-170 duration-200 ease-in-out"><a href="{{ route('recycled') }}"> </a>Add </button>
     </form>
     @endauth
     <!-- Back to the main page -->

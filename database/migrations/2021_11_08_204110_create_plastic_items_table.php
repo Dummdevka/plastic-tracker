@@ -17,7 +17,7 @@ class CreatePlasticItemsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('plastic_type_id')->constrained('plastic_types');
-            $table->integer('weight');
+            $table->decimal('weight', 8, 2);
             $table->timestamps();
         });
     }
